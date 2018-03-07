@@ -1,0 +1,61 @@
+# BGX
+
+* _Standard_        : [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
+* _[Name](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#name)_           : BGX Token
+* _[Ticker](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#symbol)_       : BGX
+* _[Decimals](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#decimals)_   : 18
+* _Emission_                                                                           : Mintable
+* _Crowdsales_                                                                         : 2
+* _Fiat dependency_                                                                    : No
+* _Tokens locked_                                                                      : Yes
+
+### Основные контракты
+1. _BGXToken_ - Контракт токена
+2. _PreITO_ - Контракт стадии предварительной продажитокена 
+3. _ITO_ - Контракт основной стадии распродажи токена 
+4. _Configurator_ - Конфигуратор и сборщик контрактов
+5. _BountyDistributor_  - Контракт для распределения баунти-токенов
+
+## Распределени токенов
+
+* _Reserved tokens percent_                      : 25%
+* _Founders tokens percent_                      : 10%
+* _Advisors tokens percent_                      : 10%
+* _Bounty tokens percent_                        : 5%
+* _For sale tokens percent_                      : 50%
+
+### Описание
+* Контракт выпускает токены только в обьеме покупки и только в момент покупки. Таким образом лишних токенов выпущено не будет.
+* Токены выпускаются на кошелек инвестора и блокируются до окончания всех распродаж. Таким образом мы защищаемся от того, что владельцы токенов могут слить токены на бирже сломав нам бонусную систему.
+* Контракты будут иметь функцию выпуска токенов в объеме эфира и функцию выпуска в количестве токенов. Где первая функция работает только в контексте распродажи и служит интерфейсом для выуска токенов в случае работы с альтернативными валютами. Вторая функция работает все время до окончаниия всех распродаж и служит для выпуска токенов на договрной основе а также на экстренный случай. Хардкап во второй функции не учитывается.
+* Хардкапы все установлены в эфирах.
+* Софткап установлен толко на предпродаже. Такова логика реализации сфоткапа.
+* Для распределяни баунти будет доступен отдельный контракт. В нем будет порверка на рассылку токенов на контракт. Адреса с контрактами будут пропускаться.
+* Все этапы содержат WhiteList. Прежде чем покупатель забросит эфир, его адрес должен быть добавлен в список авторизованым на эут операцию адресом. По WhiteList нужног уточнение. Пропускаем до MAX_LIMIT или блокируем всех?
+
+### Стадии распродаж
+
+#### PreICO
+* _Minimal insvested limit_     : 0.1 ETH
+* _Maximal insvested limit_     : 10 ETH
+* _Base price_                  : 1 ETH = 8617 Tokens
+* _Hardcap_                     : 3492 ETH
+* _Softcap_                     : 1164 ETH
+* _Start_                       : Apr 24,2018 12:00 PM UTC
+
+##### Milestones
+* 21 days, discount -30%, bonus +43%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.7 = 12310, actually 1322
+
+#### ICO
+* _Minimal insvested limit_     : 0.1 ETH
+* _Maximal insvested limit_     : 10 ETH
+* _Base price_                  : 1 ETH = 8617 Tokens
+* _Hardcap_                     : 51 222 ETH
+* _Start_                       : May 22, 2018 12:00 PM UTC 
+ 
+##### Milestones
+* 2 days, discount -25%, bonus +33%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.75 = 11489, actually 11460
+* 5 days, discount -15%, bonus +18%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.85 = 10138, actually 10168
+* 14 days, without bonus
+
+
