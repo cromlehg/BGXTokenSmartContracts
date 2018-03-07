@@ -44,7 +44,7 @@
 * _Start_                       : Apr 24,2018 12:00 PM UTC
 
 ##### Milestones
-* 21 days, discount -30%, bonus +43%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.7 = 12310, actually 1322
+* 21 days, discount -30%, bonus +43%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.7 = 12310, __actually 12322,31__
 
 #### ICO
 * _Minimal insvested limit_     : 0.1 ETH
@@ -54,8 +54,8 @@
 * _Start_                       : May 22, 2018 12:00 PM UTC 
  
 ##### Milestones
-* 2 days, discount -25%, bonus +33%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.75 = 11489, actually 11460
-* 5 days, discount -15%, bonus +18%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.85 = 10138, actually 10168
+* 2 days, discount -25%, bonus +33%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.75 = 11489, __actually 11460,61__
+* 5 days, discount -15%, bonus +18%, price 1 ETH = base_price/((100-discount)/100) = 8617/0.85 = 10138, __actually 10168,06__
 * 14 days, without bonus
 
 
